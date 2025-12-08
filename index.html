@@ -307,36 +307,20 @@ input#typeInput:focus { border-color: var(--accent); box-shadow: 0 0 15px rgba(2
 /* --- ESTILOS VS MODE MEJORADO --- */
 .vs-container { display: flex; flex-direction: column; gap: 40px; width: 100%; max-width: 1000px; animation: slideUp 0.5s ease; margin-bottom: 50px; }
 .vs-section-title { font-size: 1.5rem; text-align: center; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
-
-/* Grid para las tarjetas de cada atacante */
 .vs-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-
-/* Tarjeta individual de un atacante */
 .vs-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; backdrop-filter: blur(10px); }
 .vs-card-header { 
     background: rgba(0,0,0,0.3); padding: 15px; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); 
 }
 .vs-attacker-img { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
 .vs-attacker-name { font-weight: bold; font-size: 1.1rem; color: #fff; }
-
-/* Lista de movimientos dentro de la tarjeta */
 .vs-moves-list { padding: 15px; display: flex; flex-direction: column; gap: 12px; }
-
-/* Fila de interacción */
 .vs-interaction-row { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 8px; }
-
-/* Lado Izquierdo: El ataque */
 .vs-move-type { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem; width: 110px; }
-
-/* Centro: Flecha */
 .vs-arrow { color: var(--text-muted); opacity: 0.5; font-size: 0.8rem; }
-
-/* Lado Derecho: El objetivo y el daño */
 .vs-target-wrapper { display: flex; align-items: center; gap: 10px; flex: 1; justify-content: flex-end; }
 .vs-target-mini-img { width: 30px; height: 30px; object-fit: contain; }
 .vs-target-name { font-size: 0.85rem; color: var(--text-muted); text-align: right; line-height: 1.2; }
-
-/* Badges de daño */
 .vs-badge { padding: 4px 8px; border-radius: 6px; font-weight: 800; font-size: 0.85rem; min-width: 45px; text-align: center; margin-left: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 .dmg-4 { background: #109c38; color: #fff; }
 .dmg-2 { background: #4dff88; color: #000; }
@@ -344,6 +328,142 @@ input#typeInput:focus { border-color: var(--accent); box-shadow: 0 0 15px rgba(2
 .dmg-05 { background: #ff914d; color: #000; }
 .dmg-025 { background: #ff4d4d; color: #fff; }
 .dmg-0 { background: #222; color: #666; border: 1px solid #444; }
+
+/* --- ESTILOS TAGS/BURBUJAS (GLASS & PILL DESIGN) --- */
+.search-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 6px 20px; 
+    border-radius: 50px; 
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(15px);       
+    -webkit-backdrop-filter: blur(15px);  
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25); 
+    
+    transition: all 0.3s ease;
+    cursor: text;
+}
+
+.search-box-container:focus-within {
+    border-color: rgba(255, 203, 5, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(255, 203, 5, 0.15), 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+input#typeInput {
+    flex: 1;
+    min-width: 100px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    font-family: var(--font);
+    padding: 8px 0;
+    margin-left: 5px;
+}
+input#typeInput::placeholder { color: rgba(255,255,255,0.4); }
+
+/* --- ESTILOS TAGS/BURBUJAS --- */
+.search-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    min-height: 50px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: text;
+}
+
+.search-box-container:focus-within {
+    border-color: rgba(255, 203, 5, 0.6);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 20px rgba(255, 203, 5, 0.2);
+}
+
+input#typeInput {
+    flex: 1;
+    min-width: 60px;/
+    height: 32px;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: #fff;
+    font-size: 1.1rem;
+    font-family: var(--font);
+    font-weight: 500;
+    padding: 0 0 0 4px;
+    margin: 0;
+}
+
+input#typeInput::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+}
+
+.search-tag {
+    display: inline-flex;
+    align-items: center;
+    height: 34px;
+    padding: 0 14px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: capitalize;
+    white-space: nowrap;
+    animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Etiqueta vs */
+.search-tag.vs-tag {
+    background: rgba(255, 50, 50, 0.3)
+    border-color: rgba(255, 100, 100, 0.6);
+    font-style: italic;
+    font-family: serif;
+    padding: 0 18px;
+}
+
+/* cerrar */
+.tag-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 18px;
+    height: 18px;
+    margin-left: 8px;
+    
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    
+    font-size: 12px;
+    line-height: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tag-close:hover {
+    background: #ff4d4d;
+    color: white;
+    transform: scale(1.1);
+}
 
 footer { margin-top: auto; padding: 20px; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
 </style>
@@ -369,7 +489,10 @@ footer { margin-top: auto; padding: 20px; text-align: center; font-size: 0.8rem;
 </header>
 
 <div class="search-wrapper" id="tourSearch">
-    <input type="text" id="typeInput" placeholder="Busca Pokémon o Tipos..." autocomplete="off">
+    <div class="search-box-container" onclick="document.getElementById('typeInput').focus()">
+        <div id="searchTagsList" class="tags-list"></div>
+        <input type="text" id="typeInput" placeholder="Escribe y pulsa Enter..." autocomplete="off">
+    </div>
     <div id="suggestions" class="suggestions-list"></div>
 </div>
 
@@ -32358,6 +32481,48 @@ const msgEmptyState = document.getElementById('msgEmptyState');
 // EQUIPO
 let selectedTeam = [];
 
+//TAGS
+let currentTags = [];
+
+function addTag(text) {
+    const cleanText = text.trim();
+    if (!cleanText) return;
+    
+    // Si es "vs", normalizarlo
+    if (cleanText.toLowerCase() === 'vs') {
+        currentTags.push('vs');
+    } else {
+        // Capitalizar primera letra para que se vea bonito
+        const formatted = cleanText.charAt(0).toUpperCase() + cleanText.slice(1);
+        currentTags.push(formatted);
+    }
+    renderTags();
+    input.value = ''; // Limpiar input
+    input.focus();
+}
+
+function removeTag(index) {
+    currentTags.splice(index, 1);
+    renderTags();
+    input.focus();
+}
+
+function renderTags() {
+    const container = document.getElementById('searchTagsList');
+    container.innerHTML = '';
+    
+    currentTags.forEach((tag, index) => {
+        const span = document.createElement('span');
+        const isVs = tag.toLowerCase() === 'vs';
+        span.className = `search-tag ${isVs ? 'vs-tag' : ''}`;
+        span.innerHTML = `
+            ${tag} 
+            <span class="tag-close" onclick="event.stopPropagation(); removeTag(${index})">×</span>
+        `;
+        container.appendChild(span);
+    });
+}
+
 // IDIOMA        
 langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -32474,54 +32639,107 @@ function normalize(str) {
 input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
-        const rawVal = input.value;
-        suggestionsBox.classList.remove('show');
+        let val = input.value.trim();
 
-        if (rawVal.match(/\s+vs\.?\s+/i)) {
-            const sides = rawVal.split(/\s+vs\.?\s+/i);
-            if (sides.length === 2) {
-                teamDisplayArea.innerHTML = ''; 
-                selectedTeam = []; 
+        if (val.length > 0) {
+            const cleanVal = normalize(val);
 
-                const leftTerms = sides[0].split(/[\s,]+/).filter(t => t.length > 0);
-                const rightTerms = sides[1].split(/[\s,]+/).filter(t => t.length > 0);
-
-                const teamA = leftTerms.map(t => resolveSearchTerm(t)).filter(x => x);
-                const teamB = rightTerms.map(t => resolveSearchTerm(t)).filter(x => x);
-
-                if (teamA.length > 0 && teamB.length > 0) {
-                    renderVsMode(teamA, teamB);
-                    input.value = '';
-                    return;
-                }
+            if (cleanVal === 'vs') {
+                addTag('vs');
+                suggestionsBox.classList.remove('show');
+                return;
             }
-        }
 
-        const terms = input.value.split(/[\s,]+/).filter(t => t.length > 0);
+            const typeMatch = internalTypes.find(t => 
+                normalize(uiTypes[currentLang][t]).startsWith(cleanVal)
+            );
 
-        let validTypesFound = [];
-        let allTermsAreTypes = true;
-        for (let term of terms) {
-            const res = resolveSearchTerm(term);
-            if (res && !res.isPokemon) validTypesFound.push(res.data.types[0]);
-            else { allTermsAreTypes = false; break; }
-        }
-        if (allTermsAreTypes && validTypesFound.length > 0 && validTypesFound.length <= 2) {
-            addToTeam(null, { types: validTypesFound });
-            input.value = '';
+            const pokeMatch = pokedexData.find(p => 
+                normalize(getDisplayName(p)).startsWith(cleanVal)
+            );
+
+            const pokeMatchLoose = pokedexData.find(p => 
+                normalize(getDisplayName(p)).includes(cleanVal)
+            );
+
+            let finalName = val;
+
+            if (typeMatch) {
+                finalName = uiTypes[currentLang][typeMatch];
+            } else if (pokeMatch) {
+                finalName = getDisplayName(pokeMatch);
+            } else if (pokeMatchLoose) {
+                finalName = getDisplayName(pokeMatchLoose);
+            }
+
+            addTag(finalName);
+            suggestionsBox.classList.remove('show');
             return;
         }
 
-        let anyFound = false;
-        terms.forEach(term => {
-            const res = resolveSearchTerm(term);
-            if (res) {
-                addToTeam(res.isPokemon ? res.data : null, res.isPokemon ? null : res.data);
-                anyFound = true;
-            }
-        });
+        if (currentTags.length > 0) {
+            const rawVal = currentTags.join(' '); 
+            suggestionsBox.classList.remove('show');
 
-        if (anyFound) input.value = '';
+            // --- Lógica VS ---
+            if (rawVal.match(/\s+vs\.?\s+/i) || currentTags.includes('vs')) {
+                const sides = rawVal.split(/\s+vs\.?\s+/i);
+                
+                if (sides.length === 2) {
+                    teamDisplayArea.innerHTML = '';
+                    selectedTeam = [];
+                    
+                    const leftTerms = sides[0].split(/\s+/).filter(t => t.length > 0);
+                    const rightTerms = sides[1].split(/\s+/).filter(t => t.length > 0);
+
+                    const teamA = leftTerms.map(t => resolveSearchTerm(t)).filter(x => x);
+                    const teamB = rightTerms.map(t => resolveSearchTerm(t)).filter(x => x);
+
+                    if (teamA.length > 0 && teamB.length > 0) {
+                        renderVsMode(teamA, teamB);
+                        currentTags = []; 
+                        renderTags();
+                        return;
+                    }
+                }
+            }
+
+            // --- Normal (Equipo) ---
+            const terms = rawVal.split(/\s+/);
+            
+            let validTypesFound = [];
+            let allTermsAreTypes = true;
+            for (let term of terms) {
+                const res = resolveSearchTerm(term);
+                if (res && !res.isPokemon) validTypesFound.push(res.data.types[0]);
+                else { allTermsAreTypes = false; break; }
+            }
+
+            if (allTermsAreTypes && validTypesFound.length > 0 && validTypesFound.length <= 2) {
+                addToTeam(null, { types: validTypesFound });
+                currentTags = [];
+                renderTags();
+                return;
+            }
+
+            let anyFound = false;
+            terms.forEach(term => {
+                const res = resolveSearchTerm(term);
+                if (res) {
+                    addToTeam(res.isPokemon ? res.data : null, res.isPokemon ? null : res.data);
+                    anyFound = true;
+                }
+            });
+
+            if (anyFound) {
+                currentTags = [];
+                renderTags();
+            }
+        }
+    }
+
+    if (e.key === 'Backspace' && input.value === '' && currentTags.length > 0) {
+        removeTag(currentTags.length - 1);
     }
 });
 
@@ -32579,8 +32797,7 @@ function renderSuggestions(matches) {
 </div>
             `;
             div.onclick = () => {
-                addToTeam(null, { types: [match.value] });
-                input.value = '';
+                addTag(match.name);
                 suggestionsBox.classList.remove('show');
             };
         } else {
@@ -32593,8 +32810,7 @@ function renderSuggestions(matches) {
 <span class="suggestion-id">#${match.data.id}</span>
             `;
             div.onclick = () => {
-                addToTeam(match.data, null);
-                input.value = '';
+                addTag(match.name);
                 suggestionsBox.classList.remove('show');
             };
         }
