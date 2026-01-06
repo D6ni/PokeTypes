@@ -60,7 +60,7 @@
 - No frameworks, no build tools
 
 🚀 Getting Started
-1. Open the website (GitHub Pages)
+1. Open the website (GitHub Pages) [here](https://d6ni.github.io/WRIT3R/)
 2. Create a project
 3. Add a novel or files
 4. Start writing
