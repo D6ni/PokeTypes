@@ -9,8 +9,8 @@
 
 📖 Novel Mode
 - Create full novels with:
-  - Title, author, and synopsis
-  - Ordered chapters
+- Title, author, and synopsis
+- Ordered chapters
 - Dedicated novel cover view
 - Chapter index with quick navigation
 - Add, reorder, and edit chapters easily
